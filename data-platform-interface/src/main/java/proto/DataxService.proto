@@ -1,0 +1,72 @@
+/**
+ * datax service
+ *
+ * @author wsz
+ */
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_package = "com.wallfacers.data.platform.stub.service.datax";
+option java_outer_classname = "DataxServiceBuilder";
+option objc_class_prefix = "HLW";
+
+package DataxServiceProto;
+
+service DataxService {
+  /**
+   * 运行Datax任务
+   */
+  rpc run(RunRequest) returns (stream RunResponse) {}
+
+  /**
+ * 运行Datax任务
+ */
+  rpc stop(StopRequest) returns (StopResponse) {}
+
+}
+
+message RunRequest {
+
+  // 任务id
+  int64 jobId = 1;
+
+  // 执行代码
+  string code = 2;
+
+}
+
+message RunResponse {
+
+  // 任务id
+  int64 jobId = 1;
+
+  // 任务唯一标识
+  int64 uid = 2;
+
+  // 消息
+  string message = 3;
+
+  // 状态
+  int32 status = 4;
+
+}
+
+/**
+ * 给用户返回PID是否很危险
+ */
+message StopRequest {
+
+  // 任务唯一标识
+  int64 uid = 1;
+
+}
+
+message StopResponse {
+
+  // 状态
+  int64 uid = 1;
+
+  // 状态
+  int32 status = 2;
+
+}
