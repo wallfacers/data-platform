@@ -19,9 +19,9 @@ service DataxService {
   rpc run(RunRequest) returns (stream RunResponse) {}
 
   /**
- * 运行Datax任务
- */
-  rpc stop(StopRequest) returns (StopResponse) {}
+   * 运行Datax任务
+   */
+  rpc stop(StopRequest) returns (stream StopResponse) {}
 
 }
 

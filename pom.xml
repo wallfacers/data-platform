@@ -8,6 +8,8 @@
 		<module>data-platform-interface</module>
 		<module>data-platform-common</module>
 		<module>data-platform-web</module>
+        <module>data-platform-model</module>
+		<module>data-platform-dao</module>
 	</modules>
 
 	<parent>
@@ -38,6 +40,10 @@
 		<guava.version>31.1-jre</guava.version>
 		<jna.version>5.12.1</jna.version>
 		<jna-platform.version>5.12.1</jna-platform.version>
+		<gson.version>2.9.1</gson.version>
+		<druid-version>1.2.11</druid-version>
+		<mybatis-plus.version>3.5.2</mybatis-plus.version>
+		<lombok.version>1.18.8</lombok.version>
 
 	</properties>
 
@@ -90,6 +96,42 @@
 				<groupId>net.java.dev.jna</groupId>
 				<artifactId>jna-platform</artifactId>
 				<version>${jna-platform.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>${gson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>${druid-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>${mybatis-plus.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-annotation</artifactId>
+				<version>${mybatis-plus.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

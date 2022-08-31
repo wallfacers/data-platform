@@ -26,6 +26,25 @@
             <groupId>io.grpc</groupId>
             <artifactId>grpc-protobuf</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.wallfacers</groupId>
+            <artifactId>data-platform-common</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wallfacers</groupId>
+            <artifactId>data-platform-model</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wallfacers</groupId>
+            <artifactId>data-platform-dao</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

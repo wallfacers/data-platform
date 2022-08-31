@@ -53,7 +53,7 @@ public final class DataxServiceGrpc {
       fullMethodName = SERVICE_NAME + '/' + "stop",
       requestType = com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopRequest.class,
       responseType = com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopRequest,
       com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopResponse> getStopMethod() {
     io.grpc.MethodDescriptor<com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopRequest, com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopResponse> getStopMethod;
@@ -62,7 +62,7 @@ public final class DataxServiceGrpc {
         if ((getStopMethod = DataxServiceGrpc.getStopMethod) == null) {
           DataxServiceGrpc.getStopMethod = getStopMethod =
               io.grpc.MethodDescriptor.<com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopRequest, com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "stop"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
@@ -158,7 +158,7 @@ public final class DataxServiceGrpc {
                   this, METHODID_RUN)))
           .addMethod(
             getStopMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopRequest,
                 com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopResponse>(
@@ -201,7 +201,7 @@ public final class DataxServiceGrpc {
      */
     public void stop(com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopRequest request,
         io.grpc.stub.StreamObserver<com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getStopMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -238,8 +238,9 @@ public final class DataxServiceGrpc {
      * 运行Datax任务
      * </pre>
      */
-    public com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopResponse stop(com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public java.util.Iterator<com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopResponse> stop(
+        com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getStopMethod(), getCallOptions(), request);
     }
   }
@@ -256,18 +257,6 @@ public final class DataxServiceGrpc {
     protected DataxServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DataxServiceFutureStub(channel, callOptions);
-    }
-
-    /**
-     * <pre>
-     **
-     * 运行Datax任务
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopResponse> stop(
-        com.wallfacers.data.platform.stub.service.datax.DataxServiceBuilder.StopRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getStopMethod(), getCallOptions()), request);
     }
   }
 

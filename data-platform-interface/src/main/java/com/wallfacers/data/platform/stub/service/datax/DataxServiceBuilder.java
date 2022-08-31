@@ -2745,14 +2745,14 @@ public final class DataxServiceBuilder {
       "(\t\"J\n\013RunResponse\022\r\n\005jobId\030\001 \001(\003\022\013\n\003uid\030" +
       "\002 \001(\003\022\017\n\007message\030\003 \001(\t\022\016\n\006status\030\004 \001(\005\"\032" +
       "\n\013StopRequest\022\013\n\003uid\030\001 \001(\003\"+\n\014StopRespon" +
-      "se\022\013\n\003uid\030\001 \001(\003\022\016\n\006status\030\002 \001(\0052\243\001\n\014Data" +
+      "se\022\013\n\003uid\030\001 \001(\003\022\016\n\006status\030\002 \001(\0052\245\001\n\014Data" +
       "xService\022H\n\003run\022\035.DataxServiceProto.RunR" +
       "equest\032\036.DataxServiceProto.RunResponse\"\000" +
-      "0\001\022I\n\004stop\022\036.DataxServiceProto.StopReque" +
-      "st\032\037.DataxServiceProto.StopResponse\"\000BN\n" +
-      "/com.wallfacers.data.platform.stub.servi" +
-      "ce.dataxB\023DataxServiceBuilderP\000\242\002\003HLWb\006p" +
-      "roto3"
+      "0\001\022K\n\004stop\022\036.DataxServiceProto.StopReque" +
+      "st\032\037.DataxServiceProto.StopResponse\"\0000\001B" +
+      "N\n/com.wallfacers.data.platform.stub.ser" +
+      "vice.dataxB\023DataxServiceBuilderP\000\242\002\003HLWb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
