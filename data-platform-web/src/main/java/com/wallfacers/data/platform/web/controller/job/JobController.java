@@ -1,11 +1,13 @@
-package com.wallfacers.data.platform.web.controller;
+package com.wallfacers.data.platform.web.controller.job;
 
-import com.wallfacers.data.platform.common.AbstractCopyUtils;
 import com.wallfacers.data.platform.model.ao.JobRunAO;
 import com.wallfacers.data.platform.model.vo.JobRunResultVO;
+import com.wallfacers.data.platform.model.vo.ResponseVO;
 import com.wallfacers.data.platform.server.manager.JobManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import static com.wallfacers.data.platform.common.AbstractCopyUtils.copy;
 
 /**
  * 任务 Controller
@@ -26,8 +28,8 @@ public class JobController {
      * @return 运行任务结果集
      */
     @PostMapping("/run")
-    public JobRunResultVO run(@RequestBody JobRunAO jobRunAO) {
-        return AbstractCopyUtils.copy(jobManager.run(jobRunAO), JobRunResultVO.class);
+    public ResponseVO<JobRunResultVO> run(@RequestBody JobRunAO jobRunAO) {
+        return ResponseVO.success(copy(jobManager.run(jobRunAO), JobRunResultVO.class));
     }
 
 
@@ -38,8 +40,8 @@ public class JobController {
      * @return 任务运行日志
      */
     @GetMapping("/log")
-    public JobRunResultVO getLog(@RequestParam("jobId") Long jobId) {
-        return AbstractCopyUtils.copy(jobManager.getLog(jobId), JobRunResultVO.class);
+    public ResponseVO<JobRunResultVO> log(@RequestParam("jobId") Long jobId) {
+        return ResponseVO.success(copy(jobManager.getLog(jobId), JobRunResultVO.class));
     }
 
 }

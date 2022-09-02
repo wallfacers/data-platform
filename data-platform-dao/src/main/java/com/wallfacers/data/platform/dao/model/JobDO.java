@@ -1,6 +1,5 @@
 package com.wallfacers.data.platform.dao.model;
 
-import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.Version;
 import com.wallfacers.data.platform.enums.JobModeEnum;
